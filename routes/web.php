@@ -39,9 +39,6 @@ Route::get('/clients/{id}/delete', [ClientController::class, 'delete_client']);
 Route::get('/petugas/{id}/delete', [AuthController::class, 'delete_petugas']);
 Route::post('/client/login', [ClientController::class, 'authenticate']);
 Route::get('/master/harga-air', [TagihanController::class, 'harga_air'])->name('master-air')->middleware('auth');
-Route::post('/api/insert-data-tagihan', [TagihanController::class, 'insert']);
-Route::get('/api/get-data-tagihan', [TagihanController::class, 'get']);
-Route::post('/api/user', [AuthController::class, 'apiLogin']);
 Route::get('/client-dashboard', [ClientController::class, 'dashboard'])->name('client-dashboard');
 Route::get('/siarkan', [TagihanController::class, 'siarkan_tagihan']);
 Route::get('/tagihan', [TagihanController::class, 'index_tagihan']);
@@ -51,5 +48,3 @@ Route::get('/dash/admin/chart-pemakaian', [TagihanController::class, 'chart_admi
 Route::get('/dash/admin/chart-tagihan', [TagihanController::class, 'chart_admin_tagihan_year'])->name('tagihan.chart');
 Route::post('/broadcast/{id}', [TagihanController::class, 'sendWhatsAppMessages']);
 Route::post('/siarkan', [TagihanController::class, 'siarkan']);
-Route::post('/api/get-tagihan', [TagihanController::class, 'apiGet']);
-Route::post('/api/update-tagihan', [TagihanController::class, 'updateTagihan']);

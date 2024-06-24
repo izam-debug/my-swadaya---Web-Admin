@@ -16,10 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::post('/api/user', [AuthController::class, 'apiLogin']);
-Route::post('/api/get-tagihan', [TagihanController::class, 'apiGet']);
-Route::post('/api/update-tagihan', [TagihanController::class, 'updateTagihan']);
+Route::post('/user', [AuthController::class, 'apiLogin']);
+Route::post('/get-tagihan', [TagihanController::class, 'apiGet']);
+Route::post('/update-tagihan', [TagihanController::class, 'updateTagihan']);
 
